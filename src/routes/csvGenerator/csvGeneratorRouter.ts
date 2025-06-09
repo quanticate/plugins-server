@@ -43,30 +43,3 @@ export const csvGeneratorRouter: Router = (() => {
 
   return router;
 })();
-```**Then, commit this new file.**
-
----
-
-### **Step 3: Register the Plugin in Two Places**
-
-Finally, we tell the server and the documentation generator that our new plugin exists.
-
-**Action 1: Edit `src/api-docs/openAPIRouter.ts`**
-*   Go to this file and click the pencil icon to edit it.
-*   **Import** our new registry at the top:
-    ```typescript
-    import { csvGeneratorRegistry } from '@/routes/csvGenerator/csvGeneratorRouter';
-    ```
-*   **Register** it by adding `csvGeneratorRegistry` to the `components.schemas` array.
-
-**Action 2: Edit `src/server.ts`**
-*   Go to this file and click the pencil icon to edit it.
-*   **Import** our new router at the top:
-    ```typescript
-    import { csvGeneratorRouter } from './routes/csvGenerator/csvGeneratorRouter';
-    ```
-*   **Use** the router by adding this line in the "Routes" section:```typescript
-    app.use('/csv-generator', csvGeneratorRouter);
-    ```
-
-**Finally, commit these two changes.** Once done, the project is complete and ready to be deployed.
