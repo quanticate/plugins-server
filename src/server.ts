@@ -11,6 +11,7 @@ import requestLogger from '@/common/middleware/requestLogger';
 import { healthCheckRouter } from '@/routes/healthCheck/healthCheckRouter';
 
 import { excelGeneratorRouter } from './routes/excelGenerator/excelGeneratorRouter';
+import { csvGeneratorRouter } from './routes/csvGenerator/csvGeneratorRouter';
 import { notionDatabaseRouter } from './routes/notionDatabase/notionDatabaseRouter';
 import { powerpointGeneratorRouter } from './routes/powerpointGenerator/powerpointGeneratorRouter';
 import { webPageReaderRouter } from './routes/webPageReader/webPageReaderRouter';
@@ -43,6 +44,7 @@ app.use('/web-page-reader', webPageReaderRouter);
 app.use('/powerpoint-generator', powerpointGeneratorRouter);
 app.use('/word-generator', wordGeneratorRouter);
 app.use('/excel-generator', excelGeneratorRouter);
+apppppp.use('/csv-generator', csvGeneratorRouter);
 app.use('/notion-database', notionDatabaseRouter);
 
 // Swagger UI
